@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Data Display</title>   <!-- Title of the Webpage-->
+</head>
+<body>
+    <h1>Live Data Display</h1>       <!-- Heading -->
+
+    {% for message in get_flashed_messages() %}
+        {% if loop.index ==1 %}
+        <p id="flash">{{ message }}</p>
+        {% endif %}
+    {% endfor %}        
+
+    <div class="flash-box">
+        {% for message in get_flashed_messages() %}
+            {% if loop.index > 1 and loop.index <= 4 %}
+                <p id="flash1">{{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="flash-box">
+        {% for message in get_flashed_messages() %}
+            {% if loop.index > 4 and loop.index <= 7 %}
+                <p id="flash2">{{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="flash-box">
+        {% for message in get_flashed_messages() %}
+            {% if loop.index > 7 and loop.index <= 10 %}
+                <p id="flash3">{{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+                                     
+    <br />
+
+        
+        
+    <style>body{
+        background-image:linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.8)), url("https://imgs.search.brave.com/cxlkWbdshlMQZw3wmqGJrQ4YTAThmRNQatVNtEn6SYk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9iaXRjb2luLW1p/bmluZy1mcmVlLXBo/b3RvLmpwZz93PTYw/MCZxdWFsaXR5PTgw");
+        background-color: slategray;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: xx-large;
+        text-align:center
+        }
+
+        #flash1{
+            font-size:xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color:yellowgreen ;
+            font-weight: bolder;
+        }
+        #flash2{
+            font-size:xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color:whitesmoke ;
+            font-weight: bolder;
+        }
+        #flash3{
+            font-size:xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color:skyblue;
+            font-weight: bolder;
+        }
+        h1{
+            color:yellow;
+            text-align: center;
+            font-weight: bolder;
+        }
+        p{
+            color: whitesmoke;
+            text-align:center;
+        }
+        #image3{
+            height: 300px;
+            width:1500px
+
+        }
+        .flash-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;}
+
+        #excel-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 20px; /* Make the button round */
+            outline: none; /* Remove default focus outline */
+        }
+
+        #excel-button:hover {
+            background-color: #45a049;
+        }
+        </style>
+    <script>
+        // Javascript function to refresh the page every 30 seconds
+         function reloadPage() {
+            location.reload(); // Reload the page
+        }
+
+        // Refresh the page initially
+        reloadPage();
+
+        // Refresh the page every 30 seconds (30000 milliseconds)
+        setInterval(reloadPage, 30000);
+        
+    </script>
+    
+        <!-- an image -->
+        <img id ="image3"   
+    src="https://imgs.search.brave.com/0OIbjcixbPqJnQQ0LJkvzMhrIAN04ashw9puWBZwUgk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jaGFu/Z2VsbHkuY29tL19u/ZXh0L3N0YXRpYy9p/bWFnZXMvY29vbHdh/bGxldC01M2UxZTE5/Njk4YTlmM2Y2Yjdh/YjFiM2FhZjI4ZWU4/OC5zdmc.svg"/>
+
+
+    <p> To get further Insights, Click Here >>>  <button id="excel-button" onclick="window.location.href='https://1drv.ms/x/s!AoliwecNhj9BrEyuJQnPtG66K2KH?e=TJKPeR'">Get Sample Excel Sheet</button>
+    </p>
+</body>
+</html>
+
