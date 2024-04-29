@@ -1,6 +1,6 @@
 # function for handling various types of errors
 def handle_error(response):
-    status_code = response.status_code
+    status_code=response.status_code
     if status_code==400:
         print("bad request-your request is invalid")
     if status_code==401:
