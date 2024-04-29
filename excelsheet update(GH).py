@@ -11,12 +11,13 @@ def update_excel_sheet(prices_dcx, prices_wazirx, prices_binance, max_dict, min_
     sheet=wb.active
 
     # If the sheet doesnot have coloumn headers we will add them
-    if not sheet.dimensions:
+    if not sheet['A1'].value=="Cryptocurrency Symbol":
         sheet.append(["Cryptocurrency Symbol","WazirX Price","CoinDCX Price","Binance Price","Max Price","Max Source","Min Price","Min Source","Percentage Difference","Profit/Loss(if you invest 1L INR)"])
-    for key in prices_dcx.keys():
-        #appending our processed data into the excel sheet
-        sheet.append([key.upper(), 
-                      prices_wazirx[key],prices_dcx[key],prices_binance[key],max_dict[key][0],max_dict[key][1],min_dict[key][0],min_dict[key][1],percentage_dict[key][0],profit_loss_dict[key][0]])
+    if sheet.dimensions:
+        for key in prices_dcx.keys():
+            #appending our processed data into the excel sheet
+            sheet.append([key.upper(), 
+                          prices_wazirx[key],prices_dcx[key],prices_binance[key],max_dict[key][0],max_dict[key][1],min_dict[key][0],min_dict[key][1],percentage_dict[key][0],profit_loss_dict[key][0]])
     # saving the sheet with the processed data
     wb.save('crypto_data.xlsx')
 
