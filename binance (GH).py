@@ -27,4 +27,3 @@ if "ETH" in prices_binance :
             prices_binance["ethinr"]=prices_binance.pop("ETH")
 if "FIL" in prices_binance:
             prices_binance["filinr"]=prices_binance.pop("FIL")
-print(prices_binance)
