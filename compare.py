@@ -1,12 +1,14 @@
+#creating two empty dict to store max and min value 
 max_price_dict = {}
 min_price_dict = {}
 
+#traversing in price.dcx.keys() to get 
 for key in price_dcx.keys():
-    # Get the maximum value and its source
+    # to get maximum value and its source, max_val function will sort it by first element of tuple
     max_val, max_source = max([(price_dcx[key], 'price_dcx'), (price_wazirx[key], 'price_wazirx'), (prices_binance[key], 'price_binance')])
     max_price_dict[key] = (max_val, max_source)
     
-    # Get the minimum value and its source
+    # to get minimum value and its source, min_val function will sort it by first element of tuple
     min_val, min_source = min([(price_dcx[key], 'price_dcx'), (price_wazirx[key], 'price_wazirx'), (prices_binance[key], 'price_binance')])
     min_price_dict[key] = (min_val, min_source)
 
