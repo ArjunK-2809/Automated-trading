@@ -4,9 +4,9 @@ def get_price_from_binance(symbol):
     # api link for binance
     url='https://api.binance.com/api/v3/ticker/price'
     # parametres for the api request
-    params={'symbol':symbol}
+    parametres={'symbol':symbol}
     # get request to that api
-    response=requests.get(url,params=params)
+    response=requests.get(url,paramtres=paramtres)
     data=response.json()
     # returning the price from json response
     return float(data['price'])
