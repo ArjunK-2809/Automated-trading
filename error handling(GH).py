@@ -1,9 +1,11 @@
 # function for handling various types of errors
 def handle_error(response):
     status_code=response.status_code
-    if status_code==400:
+    if status_code==200:
+        print("everything is fine")
+    elif status_code==400:
         print("bad request-your request is invalid")
-    if status_code==401:
+    elif status_code==401:
         print("unauthorized-your api code is wrong")
     elif status_code==404:
         print("Not found-the specific link could not be found")
