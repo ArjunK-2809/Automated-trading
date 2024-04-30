@@ -15,7 +15,7 @@ def convert_usd_to_inr(amount):
             else:
                 # printing that response errorcode.if its not 200(an error is there)
                 print(f"unable to convert dollar to INR,error code:{response.status_code}")
-                return None
+                
         except Exception as e:
             print(f"an error occurred:{str(e)}")
             return None
