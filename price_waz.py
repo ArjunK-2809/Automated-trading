@@ -6,11 +6,12 @@ url_waz = 'https://api.wazirx.com/api/v2/tickers'
 # Coin symbols
 coins_waz = ['btcinr', 'ethinr', 'filinr']
 
-# Fetching prices
+# Fetching prices and handling errors 
 try :
- response = requests.get(url_waz)
- data_waz = response.json()
+  response = requests.get(url_waz)
+  data_waz = response.json()
 except Exception as response :
+        handle_error(response)
     
 
 price_waz= {}
