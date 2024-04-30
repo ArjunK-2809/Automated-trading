@@ -6,9 +6,12 @@ url_dcx = 'https://api.coindcx.com/exchange/ticker'
 # Coin symbols
 coins_dcx = ['BTCINR', 'ETHINR', 'FILINR']
 
-# Fetching prices
-response = requests.get(url_dcx)
-data_dcx = response.json()
+# Fetching prices and handling errors 
+try :
+ response = requests.get(url_dcx)
+ data_dcx = response.json()
+except Exception as response :
+        handle_error(response)
 
 #taking price of desired three coins from data 
 price_dcx = {}
