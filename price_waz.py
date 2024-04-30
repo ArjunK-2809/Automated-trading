@@ -7,9 +7,11 @@ url_waz = 'https://api.wazirx.com/api/v2/tickers'
 coins_waz = ['btcinr', 'ethinr', 'filinr']
 
 # Fetching prices
-response = requests.get(url_waz)
-data_waz = response.json()
-
+try :
+ response = requests.get(url_waz)
+ data_waz = response.json()
+except Exception as response :
+    
 
 price_waz= {}
 for element in data_waz:
