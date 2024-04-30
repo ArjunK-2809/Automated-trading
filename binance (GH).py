@@ -9,12 +9,9 @@ def get_price_from_binance(symbol):
     try:
         response=requests.get(url,paramtres=paramtres)
         data=response.json()
+        return float(data['price'])
     except Exception as response :
         handle_error(response)
-      
-  
-   
-    return float(data['price'])
 # all the three coins symbols
 symbols=['ETHUSDT','BTCUSDT','FILUSDT']
 prices_binance={}
