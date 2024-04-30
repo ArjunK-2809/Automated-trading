@@ -17,4 +17,4 @@ def convert_usd_to_inr(amount):
                 print(f"unable to convert dollar to INR,error code:{response.status_code}")
                 
         except Exception as response:
-                han
+                handle_error(response)
